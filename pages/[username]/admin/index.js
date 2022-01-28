@@ -11,7 +11,7 @@ export default function Admin() {
   function copy() {
     toast.success("Successfully Copied the link!");
     navigator.clipboard.writeText(
-      `localhost:3000/${router.query.username}/public`
+      `secretmsgme.vercel.app/${router.query.username}/public`
     );
   }
   return (

@@ -47,6 +47,7 @@ a {
   border-radius: 0.5rem;
   box-shadow: 0 5px 20px var(--gray-color);
   margin-top: 5rem;
+  border: 1px solid var(--blue-color);
 }
 
 .user-img-container {
@@ -110,7 +111,9 @@ a {
   z-index: 2;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #f6f6f63d;
+  backdrop-filter: blue(10px);
+  border: 1px solid var(--blue-color);
   border-radius: 0.5rem;
   box-shadow: 0 5px 20px var(--gray-color);
   padding: 1rem 2rem;
@@ -123,11 +126,13 @@ a {
   z-index: 2;
   width: 80%;
   height: 100%;
-  background-color: white;
+  background-color: #f6f6f63d;
+  backdrop-filter: blue(10px);
   border-radius: 0.5rem;
   box-shadow: 0 5px 20px var(--gray-color);
   margin: 1rem 0 0 0;
   overflow-y: scroll;
+  border: 1px solid var(--blue-color);
 }
 
 .inner-messages-box {
@@ -136,7 +141,8 @@ a {
   flex-direction: column;
   align-items: start;
   justify-content: flex-end;
-  background-color: white;
+  background-color: transparent;
+  backdrop-filter: blue(10px);
   margin: 1rem 0 1rem 0;
 }
 
@@ -162,6 +168,10 @@ a {
   z-index: 2;
 }
 
+.annonymous-people {
+  color: white;
+}
+
 form {
   z-index: 2;
   width: 80%;
@@ -179,6 +189,9 @@ textarea {
   padding: 0.5rem;
   font-size: 1rem;
   z-index: 2;
+  background-color: #f6f6f63d;
+  backdrop-filter: blur(10px);
+  color: white;
 }
 
 /*-----------------HOME--------------------*/
@@ -200,21 +213,24 @@ textarea {
 }
 
 .signin-container {
+  border: 1px solid var(--blue-color);
   box-shadow: 0 5px 20px var(--gray-color);
   padding: 2rem;
   border-radius: 0.5rem;
-  background-color: #f6f6f6;
+  background-color: #f6f6f63d;
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   height: 11rem;
   z-index: 2;
+  margin: 1rem;
 }
 
 .twitter-logo {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   object-fit: contain;
 }
 
@@ -222,13 +238,15 @@ textarea {
   box-shadow: 0 5px 20px var(--gray-color);
   padding: 2rem;
   border-radius: 0.5rem;
-  background-color: #f6f6f6;
+  background-color: #f6f6f63d;
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   height: 15rem;
   z-index: 2;
+  border: 1px solid var(--blue-color);
 }
 
 /* -----------------ADMIN------------------ */
@@ -257,13 +275,15 @@ textarea {
 .authcheck-container {
   z-index: 2;
   box-shadow: 0 5px 20px var(--gray-color);
-  background-color: #f6f6f6;
+  background-color: #f6f6f63d;
+  backdrop-filter: blur(10px);
   padding: 0 2rem;
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  border: 1px solid var(--blue-color);
   height: 8rem;
 }
 
@@ -290,6 +310,27 @@ video {
   border: 2px solid white;
   background-color: transparent;
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f6f6f63d;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f6f6f63d;
+  border-radius: 10px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f6f6f68c;
 }
 
 @media screen and (max-width: 500px) {

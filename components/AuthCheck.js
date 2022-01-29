@@ -7,18 +7,23 @@ import { auth } from "../lib/firebase";
 export default function AuthCheck({ children }) {
   const [login, setLogin] = useState(false);
   const router = useRouter();
+  console.log(router.query);
   useEffect(() => {
     onAuthStateChanged(auth, (data) => {
       if (data) {
-        setLogin(true);
+        if (data.uid === router.query.username) {
+          setLogin(false);
+        } else {
+          setLogin(true);
+        }
       } else {
-        setLogin(false);
+        setLogin(true);
       }
     });
-  }, []);
+  }, [router.query.username]);
   return (
     <div className="authcheck-main-container">
-      {!login ? (
+      {login ? (
         children
       ) : (
         <div className="authcheck-container">

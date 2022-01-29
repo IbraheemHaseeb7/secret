@@ -310,6 +310,7 @@ textarea {
 
 .permitted {
   text-align: center;
+  color: white;
 }
 
 video {
@@ -470,5 +471,8 @@ video {
   }
   .signout-message {
     font-size: 1.3rem;
+  }
+  .permitted {
+    font-size: 1.5rem;
   }
 }

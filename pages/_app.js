@@ -4,6 +4,7 @@ import { UserData } from "../components/Context";
 import { useEffect, useRef, useState } from "react";
 import { Toaster } from "react-hot-toast";
 import Head from "next/head";
+import Footer from "../components/Footer";
 
 function MyApp({ Component, pageProps }) {
   const { hello } = useData();
@@ -49,6 +50,7 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Toaster />
+      <Footer />
       {mute ? (
         <button className="mute" onClick={muter}>
           🔇

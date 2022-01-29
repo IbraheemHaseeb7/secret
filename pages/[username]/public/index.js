@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ShowMessages from "../../../components/ShowMessages";
 import { setDoc, doc } from "firebase/firestore";
 import { firestore } from "../../../lib/firebase";
 import { useRouter } from "next/router";
@@ -9,19 +8,14 @@ import toast from "react-hot-toast";
 
 export default function Public() {
   const [input, setInput] = useState("");
-  const [div, setDiv] = useState({ scrollHeight: 0, clientHeight: 0 });
   const data = useRouter();
   function handleChange(e) {
     setInput(e.target.value);
   }
-  setTimeout(() => {
-    div.scrollTop = div.scrollHeight - div.clientHeight;
-  }, 3000);
   async function handleSubmit(e) {
     e.preventDefault();
     const date = new Date().getTime().toString();
     setInput("");
-    div.scrollTop = div.scrollHeight - div.clientHeight;
     await setDoc(
       doc(firestore, `users/${data.query.username}/messages`, date),
       {
@@ -34,7 +28,15 @@ export default function Public() {
   return (
     <AuthCheck>
       <div className="public-container">
-        <ShowMessages setDiv={setDiv} />
+        <h3 className="public-message">
+          You can send this user as many
+          <br />
+          messages as you want but please
+          <br /> do not use any FOUL Language or <br /> do not disrespect
+          anyone.
+          <br />
+          Khush reya kero khushk na reya kero👉👈
+        </h3>
         <form>
           <textarea
             placeholder="Type your message here"

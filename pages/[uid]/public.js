@@ -29,7 +29,7 @@ export default function Public() {
     const date = new Date().getTime().toString();
     setInput("");
     await setDoc(
-      doc(firestore, `users/${data.query.username}/messages`, date),
+      doc(firestore, `users/${data.query.uid}/messages`, date),
       {
         message: input,
         waqt: date,
